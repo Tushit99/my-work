@@ -5,7 +5,6 @@ function FourWheeler(wheels, model, color, speed, fuel) {
     
     this.wheels = wheels ;
     this.model = model ; 
-    
     this.color = color ; 
     this.speed = speed ;
     this.fuel = fuel ; 

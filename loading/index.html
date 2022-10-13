@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="showd">
+
+    </div>
+    <div id="loader_div">
+        <img src="https://media.tenor.com/wfEN4Vd_GYsAAAAC/loading.gif" alt="img1">
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let getdata = new Promise(function (resolve, reject) {
+
+        setTimeout(function () {
+            let data = movies;
+
+            if (data != null) {
+                resolve(data);
+            }
+            else {
+                reject("ERR: Setver could not get movie data");
+            }
+        }, 3000)
+    }) 
+
+
+    getdata.then(function () {
+        appendMovie(success);
+    }).catch(function () {
+        console.log("error", error);
+    })
+
+</script> 
+
