@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        body{
+            margin: 0; 
+            padding: 0; 
+        }
+        #main{
+            display: flex; 
+            background-color: rgb(20, 20, 67); 
+            align-items: center; 
+            justify-content: space-around;  
+            color: white; 
+        } 
+        #main img{ 
+            width: 60px;  
+        }
+
+        button{
+            background-color: blue; 
+            border: 0;  
+            padding: 6px 12px; 
+        }
+
+        #load{
+            display: none; 
+        }
+
+        /* display */  
+        .display{
+            display: grid; 
+            width: 90%;    
+            margin: 20px auto; 
+            gap: 20px;  
+            grid-template-columns: repeat(4,1fr); 
+        }
+        .display>div{
+            padding: 10px; 
+            box-shadow: rgba(114, 90, 255, 0.198) 0px 10px 36px 0px, rgba(70, 101, 255, 0.06) 0px 0px 0px 1px;  
+        }
+        .display img{
+            width: 100%; 
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="main"></nav>
+    <div class="option">
+        <input type="text" id="movie_name">  
+        <div class="append">
+        </div>
+    </div>
+    <div id="load">  
+        <img src="https://icons8.com/preloaders/preloaders/1488/Iphone-spinner-2.gif" alt="">
+    </div>
+    <div class="display">
+            
+    </div>
+</body>
+</html>
+
+<script type="module" src="./script/home.js" ></script>

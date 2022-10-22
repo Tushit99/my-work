@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./ind.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="serch_div">
+            <input type="text" oninput="debounce(1000)" id="movie_name">
+            <div class="append">
+            </div>
+            <div class="load">
+                <img src="https://media.tenor.com/gfmfwqdidD0AAAAC/loading-buffering.gif" alt="">
+            </div>
+        </div>
+        <div class="movie">
+            <div id="play">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let id;
+
+    function debounce(delay) {
+
+        if (id) {
+            clearTimeout(id);
+        }
+
+        id = setTimeout(() => {
+            serch();
+        }, delay)
+
+    }
+
+    async function serch() {
+
+        let loadimg = document.querySelector(".load");
+        loadimg.style.display = "block"
+
+        let movie = document.getElementById("movie_name").value;
+
+        let res = await fetch(`http://www.omdbapi.com/?apikey=f8634ed4&s=${movie}`);
+
+        let d1 = await res.json();
+        display(d1.Search);
+    }
+
+    function display(arr) {
+        console.log(arr);
+        document.querySelector(".append").innerHTML = "";
+
+        let loadimg = document.querySelector(".load");
+        loadimg.style.display = "none"
+
+        arr.map((e) => {
+            let d1 = document.createElement("div");
+            d1.addEventListener("click", function () {
+                fullshow(e);
+            })
+
+            let name = document.createElement("h4");
+            name.innerText = e.Title;
+
+            d1.append( name);
+            document.querySelector(".append").append(d1);
+        })
+    }
+
+    function fullshow(e) {
+
+        document.querySelector(".append").innerHTML = "";
+
+        document.getElementById("play").innerHTML = ""
+
+        let div = document.createElement("div");  
+        div.id= "poster" ;   
+
+        let da1 = document.createElement("div"); 
+        let da2 = document.createElement("div");  
+
+        let img1 = document.createElement("img");
+        img1.src = e.Poster;
+
+        let na = document.createElement("h4");
+        na.innerText = e.Title;
+
+        let year = document.createElement("h4");
+        year.innerText = e.Year;  
+
+
+        da1.append(img1);
+        da2.append(na,year);  
+
+        div.append(da1,da2); 
+        document.getElementById("play").append(div) 
+
+    }
+
+</script>

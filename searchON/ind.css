@@ -1,0 +1,86 @@
+.main {
+    display: flex; 
+    justify-content: baseline; 
+    align-items: baseline;
+    border: 2px solid black;
+}
+
+/* box1 */
+.main>div:nth-child(1) {
+    flex: 4;
+    /* border: 2px solid red; */
+    padding: 10px;
+    margin: auto; 
+    height: 470px;
+}
+
+.main input {
+    width: 99%;
+    font-size: large;
+}
+
+.append {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;      width: 100%;
+    display: grid; 
+    margin: auto; 
+}  
+
+.append>div{
+    padding: 6px 0; 
+    border: 1px solid black;
+} 
+
+.append h4{
+    margin: 0;  
+    cursor: pointer; 
+}
+
+/* loading part */ 
+
+.load{
+    display: none; 
+} 
+
+.load img{
+    width: 100%; 
+} 
+
+/* box2 */
+
+.main>div:nth-child(2) {
+    flex: 8;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 2px solid rgb(255, 0, 221);
+    justify-content: center;
+}
+
+.movie>div {
+    /* border: 2px solid rgb(0, 13, 255); */
+    width: 90%;
+    margin: 20px auto;
+    height: 480px;
+}
+
+/* poster */  
+
+#poster{
+    display: flex;  
+    align-items: center; 
+}
+
+#poster>div:nth-child(1){
+    flex: 4; 
+}
+
+#poster img{
+    width: 90%;
+}
+
+#poster>div:nth-child(2){
+    flex: 6;
+}
+
+

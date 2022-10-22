@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+    <style>
+        body{
+            margin: 0; 
+            padding: 0;  
+            font-family: Arial, Helvetica, sans-serif;  
+        }
+        #main{
+            display: flex; 
+            background-color: rgb(20, 20, 67); 
+            align-items: center; 
+            justify-content: space-around; 
+            color: white; 
+        } 
+        #main img{
+            width: 60px;  
+        }
+
+        /* slide Show */
+
+        .slidshow{
+            width: 100%; 
+        }
+        .slidshow img{
+            width: 100%; 
+        }
+
+        /* sort  */
+        #sort_area{
+            padding: 10px 0;   
+            display: flex;  
+            align-items: center;  
+            margin: 20px 0;
+            justify-content: space-around; 
+            background-color: rgb(229, 229, 229);
+        } 
+
+
+        /* movie area */
+        .movie_area{
+            width: 90%;  
+            margin: auto;  
+            display: grid;  
+            gap: 20px; 
+            grid-template-columns: repeat(4,1fr);  
+        }
+        .movie_area img{
+            width: 100%;  
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;   
+        }
+
+        /* button */ 
+        #sort_area>select{
+            background-color: rgb(232, 114, 226); 
+            border: 0; 
+            outline: 0; 
+            padding: 6px 14px ; 
+            color: white;  
+            border-radius: 10px; 
+            font-size: large;
+        }
+
+        #sort_area>button{
+            background-color: blue; 
+            border: 0; 
+            outline: 0; 
+            padding: 6px 14px ; 
+            color: white;  
+            border-radius: 10px; 
+            cursor: pointer;  
+            font-size: large;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+    </div> 
+    <button onclick="window.location.href='./home.html'"> Search page </button>
+    <div class="slidshow">
+    </div>
+    <div id="sort_area">
+        <select id="sort2">
+            <option value="">--</option>
+            <option value="htl"> High to low </option>
+            <option value="lth"> Low to high </option>
+        </select> 
+        <button id="year" > Sort by Year </button>
+    </div> 
+    <div id="load">  
+        <img src="https://icons8.com/preloaders/preloaders/1488/Iphone-spinner-2.gif" alt="">
+    </div>
+    <div class="movie_area">
+    </div>
+</body>
+</html> 
+<script type="module" src="/script/index.js" ></script>

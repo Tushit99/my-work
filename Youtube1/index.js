@@ -1,5 +1,10 @@
 
-// https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=q&key=[AIzaSyB4btXZPf-7JKtcXYv4xndBs_h6fmnxKJc]
+import navbar from "./components/navbar";  
+console.log(navbar); 
+// document.getElementById("nav").innerHTML = navbar;  
+
+// data fetch 
+document.getElementById("myBtn").addEventListener("click", serchVideos)
 
 async function serchVideos() {
   try {
@@ -20,7 +25,7 @@ async function serchVideos() {
 
 const append = (data) => {
   document.getElementById("data").innerHTML = "";
-  console.log(data);
+  // console.log(data);
   data.forEach(({ snippet, id: { videoId } }) => {
     let div = document.createElement("div");
 
@@ -53,17 +58,15 @@ const append = (data) => {
   });
 };
 
-import navbar from "./navbar"; 
-console.log(navbar); 
 
 // input enter to chick button
 
-// var input = document.querySelector("#search_term"); 
-// input.addEventListener("keypress", function (event) {
-//   if (event.key === "Enter") {
-//     event.preventDefault();
-//     document.getElementById("myBtn").click();
-//   }
-// });
+var input = document.querySelector("#search_term");
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+}); 
 
 // make the thumbnill clickable

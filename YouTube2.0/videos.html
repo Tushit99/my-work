@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
     <style>
         * { 
             padding: 0;
@@ -26,7 +25,6 @@
             background-color: rgba(32, 32, 32, 0.459);
             padding: 4px 0;
         }
-
         nav img {
             width: 120px;
             border-radius: 10px; 
@@ -49,8 +47,7 @@
             display: flex; 
             align-items: center; 
             /* border: 2px solid white;  */
-        }
-
+        } 
         .nav_sr>input{
             background-color: rgb(18,18,18);  
             border: 0; 
@@ -59,52 +56,37 @@
             color: white; 
             padding: 4px;  
         }
-        #data{
-            display: grid; 
-            grid-template-columns: repeat(4,1fr);  
-            gap: 30px; 
-            width: 94%; 
-            margin: 30px auto; 
-        }
-        #data img{
-            width: 100%;  
-        }
-        #data>div{
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;   
-            color: white; 
+
+        #container {
+            display: flex;
+            width: 98%;
+            margin: auto;
+            height: 500px;
         }
 
-        h2,p{
-            margin: 0 10px ;
+        #video_details {
+            flex: 7;
+            border: 2px solid rgb(255, 0, 0);
+
         }
 
-        @media all and (max-width:550px) {
-            #data{
-                grid-template-columns: repeat(2,1fr);
-            }
-        }
+        #rocommendations {
+            flex: 3; 
+            border: 2px solid rgb(255, 230, 0);
 
-        @media (min-width:550px) and (max-width:960px) {
-            #data{
-                grid-template-columns: repeat(3,1fr);
-            }
         }
-
     </style>
 </head>
-
-<body> 
-    <nav id="nav">
-        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzs7d1nlxerknIa7Ajtp1dwrRknLGo-4oZ7A&usqp=CAU"
-            alt="youtube-img">
-        <div class="nav_sr">
-            <input type="text" id="search_term">
-            <button id="myBtn" onclick="serchVideos()"> <i class="fa fa-search"></i> </button>
-        </div>   -->
-    </nav>
-    <div id="data"></div>
+<body>
+    <div>
+        <nav id="navbar">
+        </nav>
+        <div id="container">
+            <div id="video_details"></div>
+            <div id="rocommendations"></div>
+        </div>
+    </div>
 </body>
 </html>
 
-<script type="module" src="./index.html"></script>
-
+<script type="module" src="./videos.js"></script>
