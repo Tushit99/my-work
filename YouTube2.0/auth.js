@@ -31,23 +31,23 @@ class User {
     }  
   }  
 
-  async Login(u, p) {
+     async loginuser(u, p){
     const login_data = {
       username: u,
       password: p,
     };
 
-    const login_api = 'https://masai-api-mocker.herokuapp.com/auth/login';
+    const login_api = `https://masai-api-mocker.herokuapp.com/auth/login`;
 
     const response = await fetch(login_api, {
       method: "POST",
-      body: JSON.stringify(login_api),
+      body: JSON.stringify(login_data),
 
       headers: {
         "Content-Type": "application/json",
       }, 
     });
-    const data = await responce.json();
+    const data = await response.json();
     console.log("data", data);  
     return data 
   }
@@ -79,7 +79,7 @@ const Login = async () => {
     const username = document.getElementById("login-username").value; 
     const password = document.getElementById("login-password").value;
 
-    let {token} = await user.Login(username,password) 
+    let {token} = await user.loginuser(username,password) 
     getProfile(username,token); 
 };
 
@@ -98,6 +98,6 @@ const getProfile = async (username,token)=>{
     console.log("data",data); 
 
 }
-
+ 
 
 

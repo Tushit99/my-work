@@ -75,6 +75,31 @@
             margin: 0 10px ;
         }
 
+        /* sort  */ 
+        .sort_box{
+            text-align: right; 
+            width: 90%; 
+            margin: 10px auto;  
+        }
+
+        #sort{
+            margin: auto; 
+            padding: 4px; 
+            border-radius: 4px; 
+            background-color: unset; 
+            color: white; 
+            border: 1px solid white; 
+            font-size: medium;  
+            box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px;
+        }
+        #sort>option{
+            background-color:  rgb(24, 24, 24); 
+            color: white; 
+            font-size: medium;  
+        }
+
+        /* media query */
+
         @media all and (max-width:550px) {
             #data{
                 grid-template-columns: repeat(2,1fr);
@@ -91,6 +116,15 @@
 </head>
 <body>
     <nav></nav> 
+    <div class="sort_box">
+        <select id="sort" >
+            <option value="">sort</option>
+            <option value="relevance">Relevance</option>
+            <option value="rating">Rating</option>
+            <option value="date">Date</option> 
+            <option value="title">title</option>
+        </select>
+    </div>
     <div id="data"></div>
 </body>
 </html>   

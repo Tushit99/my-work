@@ -5,7 +5,7 @@ document.querySelector("nav").innerHTML = navbar();
 showdata(); 
 function showdata(){
   let vi_div = document.getElementById("video_details"); 
-    vi_div.innerHTML = ""; 
+    vi_div.innerHTML = "";  
   
     let data = JSON.parse(localStorage.getItem("clicked_video"));  
     // console.log(data); 
